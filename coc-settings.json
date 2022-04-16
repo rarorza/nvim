@@ -1,0 +1,101 @@
+{
+   "languageserver": {
+
+    },
+
+// coc-jedi(Python)
+
+    "jedi.enable": true,
+    "jedi.startupMessage": false,
+    "jedi.markupKindPreferred": "plaintext",
+    "jedi.trace.server": "off",
+    "jedi.jediSettings.autoImportModules": [],
+    "jedi.jediSettings.caseInsensitiveCompletion": true,
+    "jedi.jediSettings.debug": false,
+    "jedi.executable.command": "jedi-language-server",
+    "jedi.executable.args": [],
+    "jedi.codeAction.nameExtractFunction": "jls_extract_def",
+    "jedi.codeAction.nameExtractVariable": "jls_extract_var",
+    "jedi.completion.disableSnippets": false,
+    "jedi.completion.resolveEagerly": false,
+    "jedi.completion.ignorePatterns": [],
+    "jedi.diagnostics.enable": true,
+    "jedi.diagnostics.didOpen": true,
+    "jedi.diagnostics.didChange": true,
+    "jedi.diagnostics.didSave": true,
+    "jedi.hover.enable": true,
+    "jedi.hover.disable.keyword.all": false,
+    "jedi.hover.disable.keyword.names": [],
+    "jedi.hover.disable.keyword.fullNames": [],
+    "jedi.workspace.extraPaths": [],
+    "jedi.workspace.symbols.maxSymbols": 20,
+    "jedi.workspace.symbols.ignoreFolders": [
+        ".nox",
+        ".tox",
+        ".venv",
+        "__pycache__",
+        "venv"
+    ],
+
+// coc-json(Javascript)
+
+    "json.enable": true,
+    "json.trace.server": "off",
+    "json.execArgv": [],
+    "json.format.enable": true,
+    "json.schemas": [],
+
+// coc-html(Html)
+
+    "html.enable": true,
+    "html.execArgv": [],
+    "html.filetypes": ["html","handlebars","htmldjango","blade"],
+    "html.customData": [],
+    "html.completion.attributeDefaultValue": "doublequotes",
+    "html.format.enable": true,
+    "html.format.wrapLineLength": 120,
+    "html.format.unformatted": "wbr",
+    "html.format.contentUnformatted": "pre,code,textarea",
+    "html.format.indentInnerHtml": false,
+    "html.format.preserveNewLines": true,
+    "html.format.maxPreserveNewLines": null,
+    "html.format.indentHandlebars": false,
+    "html.format.endWithNewline": false,
+    "html.format.extraLiners": "head, body, /html",
+    "html.format.wrapAttributes": "auto",
+    "html.format.wrapAttributesIndentSize": null,
+    "html.format.templating": false,
+    "html.format.unformattedContentDelimiter": "",
+    "html.suggest.html5": true,
+    "html.validate.scripts": true,
+    "html.validate.styles": true,
+    "html.validate.html": true,
+    "html.autoClosingTags": true,
+    "html.autoCreateQuotes": true,
+    "html.hover.documentation": true,
+    "html.hover.references": true,
+    "html.trace.server": "off",
+
+// coc-css(Css)
+
+    "css.enable": true,
+    "css.trace.server": "off",
+    "css.customData": [],
+    "css.completion.triggerPropertyValueCompletion": true,
+    "css.completion.completePropertyWithSemicolon": true,
+    "css.validate": true,
+    "css.hover.documentation": true,
+    "css.hover.references": true,
+
+// coc-explorer
+
+    "explorer.width": 30,
+    "explorer.icon.enableNerdfont": true,
+    "explorer.previewAction.onHover": false,
+    "explorer.keyMappings.global": {
+        "<cr>": ["expandable?", "expand", "open"],
+        "v": "open:vsplit",
+        "h": "open:split"
+    },
+    "explorer.git.enable": true
+}
