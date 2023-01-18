@@ -56,7 +56,8 @@ set splitright       " Create the vertical splits to the right
 set splitbelow       " Create the horizontal splits below
 set autoread         " Update vim after file update from outside
 set mouse=a          " Enable mouse support
-set clipboard+=unnamedplus
+set clipboard+=unnamedplus " Enable copy paste sync
+set cursorline       " Enable highlighting of the current line
 filetype on          " Detect and set the filetype option and trigger the FileType Event
 filetype plugin on   " Load the plugin file for the file type, if any
 filetype indent on   " Load the indent file for the file type, if any
@@ -65,6 +66,9 @@ filetype indent on   " Load the indent file for the file type, if any
 
 
 " Remaps ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´
+
+" Leader
+"let mapleader="\<space>
 
 " Open init.vim in a split
 nnoremap <leader>ev :vsplit ~/.config/nvim/init.vim<cr>
@@ -156,7 +160,7 @@ if exists('+termguicolors')
   set termguicolors
 endif
 
-let g:sonokai_style = 'andromeda'
+let g:sonokai_style = 'atlantis'
 let g:sonokai_enable_italic = 1
 let g:sonokai_disable_italic_comment = 0
 let g:sonokai_diagnostic_line_highlight = 1
@@ -225,7 +229,7 @@ endif
 
 " COC (Conquer of Completion) ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´
 
-let g:coc_global_extensions = [ 'coc-snippets', 'coc-explorer', ]
+let g:coc_global_extensions = [ 'coc-snippets', 'coc-explorer', 'coc-word', 'coc-tsserver', 'coc-html', 'coc-css', 'coc-pyright', ]
 
 " Set internal encoding of vim, not needed on neovim, since coc.nvim using some
 " unicode characters in the file autoload/float.vim
@@ -396,6 +400,17 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
+" use <tab> to trigger completion and navigate to the next complete item
+function! CheckBackspace() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+inoremap <silent><expr> <Tab>
+      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ CheckBackspace() ? "\<Tab>" :
+      \ coc#refresh()
+
 
 
 
@@ -418,19 +433,6 @@ imap <C-j> <Plug>(coc-snippets-expand-jump)
 
 " Use <leader>x for convert visual selected code to snippet
 xmap <leader>x  <Plug>(coc-convert-snippet)
-
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? coc#_select_confirm() :
-      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
-let g:coc_snippet_next = '<tab>'
 
 
 
