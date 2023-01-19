@@ -202,18 +202,40 @@ let g:airline_powerline_fonts = 1
 
 " ALE ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´
 
+"python linters 'flake8', 'pydocstyle', 'bandit', 'mypy'
 let g:ale_linters = {
+\   'python': [], 
+\   'c': [],
+\   'cpp': [],
+\   'csharp': [],
 \}
 
 let g:ale_fixers = {
 \   '*': ['trim_whitespace'],
+\   'python': ['black'],
+\   'c': ['clang-format'],
+\   'cpp': ['clang-format'],
+\   'csharp': ['clang-format'],
+\   'javascript': ['prettier'],
+\   'html': ['prettier'],
+\   'css': ['prettier'],
 \}
+
+let g:ale_disable_lsp = 1
 
 let g:ale_fix_on_save = 1
 
 if (has("nvim"))
 
-
+" ALE C/C#/C++
+let g:ale_c_clangformat_options = '"-style={
+\ BasedOnStyle: google,
+\ IndentWidth: 4,
+\ AllowShortBlocksOnASingleLine: Always,
+\ AllowShortFunctionsOnASingleLine: Inline,
+\ FixNamespaceComments: true,
+\ ReflowComments: false,
+\ }"'
 
 
 " Telescope ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´
@@ -229,7 +251,7 @@ endif
 
 " COC (Conquer of Completion) ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´
 
-let g:coc_global_extensions = [ 'coc-snippets', 'coc-explorer', 'coc-word', 'coc-tsserver', 'coc-html', 'coc-css', 'coc-pyright', ]
+let g:coc_global_extensions = [ 'coc-snippets', 'coc-explorer', 'coc-word', 'coc-tsserver', 'coc-html', 'coc-css', 'coc-pyright', 'coc-clangd' ]
 
 " Set internal encoding of vim, not needed on neovim, since coc.nvim using some
 " unicode characters in the file autoload/float.vim
