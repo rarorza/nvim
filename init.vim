@@ -204,7 +204,7 @@ let g:airline_powerline_fonts = 1
 
 "python linters 'flake8', 'pydocstyle', 'bandit', 'mypy'
 let g:ale_linters = {
-\   'python': [], 
+\   'python': [],
 \   'c': [],
 \   'cpp': [],
 \   'csharp': [],
@@ -217,6 +217,7 @@ let g:ale_fixers = {
 \   'cpp': ['clang-format'],
 \   'csharp': ['clang-format'],
 \   'javascript': ['prettier'],
+\   'typescript': ['prettier'],
 \   'html': ['prettier'],
 \   'css': ['prettier'],
 \}
