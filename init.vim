@@ -17,6 +17,7 @@ Plug 'dense-analysis/ale'
 Plug 'honza/vim-snippets'
 Plug 'Yggdroot/indentLine'
 Plug 'neoclide/jsonc.vim'
+Plug 'tpope/vim-commentary'
 
 if (has("nvim"))
     Plug 'nvim-lua/plenary.nvim'
