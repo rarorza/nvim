@@ -18,6 +18,7 @@ Plug 'honza/vim-snippets'
 Plug 'Yggdroot/indentLine'
 Plug 'neoclide/jsonc.vim'
 Plug 'tpope/vim-commentary'
+Plug 'davidhalter/jedi-vim'
 
 if (has("nvim"))
     Plug 'nvim-lua/plenary.nvim'
@@ -36,9 +37,9 @@ set notimeout nottimeout " No timeout in leader key
 
 syntax on            " Enable syntax highlight
 set nu               " Enable line numbers
-set tabstop=4        " Show existing tab with 4 spaces width
-set softtabstop=4    " Show existing tab with 4 spaces width
-set shiftwidth=4     " When indenting with '>', use 4 spaces width
+set tabstop=2        " Show existing tab with 4 spaces width
+set softtabstop=2    " Show existing tab with 4 spaces width
+set shiftwidth=2     " When indenting with '>', use 4 spaces width
 set expandtab        " On pressing tab, insert 4 spaces
 set smarttab         " insert tabs on the start of a line according to shiftwidth
 set smartindent      " Automatically inserts one extra level of indentation in some cases
@@ -117,6 +118,9 @@ nmap tt :q<CR>
 
 " Call command shortcut
 nmap tc :!
+
+" Run current python script
+nnoremap tp :!python %<cr>
 
 " Toggle terminal on/off (neovim)
 nnoremap <A-t> :call TermToggle(12)<CR>
@@ -205,15 +209,15 @@ let g:airline_powerline_fonts = 1
 
 "python linters 'flake8', 'pydocstyle', 'bandit', 'mypy'
 let g:ale_linters = {
-\   'python': [],
 \   'c': [],
 \   'cpp': [],
 \   'csharp': [],
+\   'python': ['flake8', 'pyright', 'bandit'],
 \}
 
 let g:ale_fixers = {
 \   '*': ['trim_whitespace'],
-\   'python': ['black'],
+\   'python': ['black', 'isort'],
 \   'c': ['clang-format'],
 \   'cpp': ['clang-format'],
 \   'csharp': ['clang-format'],
@@ -239,6 +243,10 @@ let g:ale_c_clangformat_options = '"-style={
 \ ReflowComments: false,
 \ }"'
 
+" Python
+let g:ale_python_flake8_options = '--max-line-length=100 --extend-ignore=E203'
+let g:ale_python_black_options = '--line-length 100'
+let g:ale_python_isort_options = '--profile black -l 100'
 
 " Telescope ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´
 
