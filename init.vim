@@ -70,7 +70,7 @@ filetype indent on   " Load the indent file for the file type, if any
 " Remaps ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´
 
 " Leader
-"let mapleader="\<space>
+let mapleader="\<space>"
 
 " Open init.vim in a split
 nnoremap <leader>ev :vsplit ~/.config/nvim/init.vim<cr>
