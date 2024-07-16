@@ -9,8 +9,18 @@ return {
   "AstroNvim/astrocommunity",
   { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity.pack.python" },
+  { import = "astrocommunity.pack.typescript-all-in-one" },
+  { import = "astrocommunity.pack.vue" },
+  { import = "astrocommunity.pack.html-css" },
+  { import = "astrocommunity.pack.tailwindcss" },
+  { import = "astrocommunity.pack.docker" },
+  { import = "astrocommunity.pack.godot" },
+  { import = "astrocommunity.git.diffview-nvim" },
   { import = "astrocommunity.colorscheme.monokai-pro-nvim" },
+  { import = "astrocommunity.color.transparent-nvim" },
   { import = "astrocommunity.editing-support.vim-visual-multi" },
   { import = "astrocommunity.editing-support.vim-move" },
+  { import = "astrocommunity.programming-language-support.web-tools-nvim" },
+  { import = "astrocommunity.game.leetcode-nvim" },
   -- import/override with your plugins folder
 }
