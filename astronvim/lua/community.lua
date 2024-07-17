@@ -15,6 +15,7 @@ return {
   { import = "astrocommunity.pack.tailwindcss" },
   { import = "astrocommunity.pack.docker" },
   { import = "astrocommunity.pack.godot" },
+  { import = "astrocommunity.code-runner.overseer-nvim" },
   { import = "astrocommunity.git.diffview-nvim" },
   { import = "astrocommunity.colorscheme.monokai-pro-nvim" },
   { import = "astrocommunity.color.transparent-nvim" },
