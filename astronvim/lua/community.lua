@@ -22,6 +22,7 @@ return {
   { import = "astrocommunity.editing-support.vim-visual-multi" },
   { import = "astrocommunity.editing-support.vim-move" },
   { import = "astrocommunity.search.grug-far-nvim" }, -- use \b  \b to replace exactly same thing
-  { import = "astrocommunity.programming-language-support
+  { import = "astrocommunity.programming-language-support.web-tools-nvim" },
+  
   -- import/override with your plugins folder
 }
