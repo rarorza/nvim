@@ -15,7 +15,7 @@ return {
   { import = "astrocommunity.pack.tailwindcss" },
   { import = "astrocommunity.pack.docker" },
   { import = "astrocommunity.pack.godot" },
-  { import = "astrocommunity.code-runner.overseer-nvim" },
+  { import = "astrocommunity.code-runner.compiler-nvim" },
   { import = "astrocommunity.git.diffview-nvim" },
   { import = "astrocommunity.colorscheme.dracula-nvim" },
   { import = "astrocommunity.color.transparent-nvim" },
@@ -23,6 +23,7 @@ return {
   { import = "astrocommunity.editing-support.vim-move" },
   { import = "astrocommunity.search.grug-far-nvim" }, -- use \b  \b to replace exactly same thing
   { import = "astrocommunity.programming-language-support.web-tools-nvim" },
-  
+  { import = "astrocommunity.completion.copilot-cmp" },
+  { import = "astrocommunity.editing-support.copilotchat-nvim" },
   -- import/override with your plugins folder
 }
